@@ -27,7 +27,7 @@ Introductory Knowledge of R & RStudio
     ```  
 1. Clone repository for this classes  
     ```shell
-    git clone https://github.com/y-chai/GEMS-Learning-R-Geospatial-Raster.git
+    git clone https://github.com/y-chai/GEMS-Learning-R-Spatial-Regression.git
     ```
 
 ## Class and Exercises
