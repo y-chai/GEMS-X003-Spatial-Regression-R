@@ -1,6 +1,6 @@
 <img src="images/GEMS long.png" width=600 alt="GEMS Logo" title="GEMS" />
 
-# Spatiral Regression in R
+# Spatial Regression in R
 
 Welcome to **GEMS X003.4 Explicitly Accounting for Location in Agriculture: Spatial Regression in R**.  
 
