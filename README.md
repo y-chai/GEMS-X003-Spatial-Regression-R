@@ -31,4 +31,4 @@ Introductory Knowledge of R & RStudio
     ```
 
 ## Class and Exercises
-In your JupyterLab environment, open the newly cloned directory `GEMS-Learning-R-Regression` and then follow along for in-class exercises 
+In your JupyterLab environment, open the newly cloned directory `GEMS-Learning-R-Spatial-Regression` and then follow along for in-class exercises 
