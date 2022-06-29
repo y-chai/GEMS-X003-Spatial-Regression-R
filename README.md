@@ -18,13 +18,19 @@ Introductory Knowledge of R & RStudio
 
 1. Open a bash terminal by clicking 'Terminal' icon in the Launcher **OR** by clicking `File > New > Terminal`
 
-1. In bash terminal, create directories for this class, if these directories were not created before:
+1. If the directories `classes\GEMSX003` were not created before, create directories for this class in the bash terminal using the following four commands 
     ```shell
     mkdir classes  
     cd classes  
     mkdir GEMSX003  
     cd GEMSX003
     ```  
+    If these directories already exist, use the following commands to change to this directory:  
+    ```
+    cd classes
+    cd GEMSX003
+    ```
+    
 1. Clone repository for this classes  
     ```shell
     git clone https://github.com/y-chai/GEMS-Learning-R-Spatial-Regression.git
