@@ -34,8 +34,8 @@ Prerequisites: GEMSx003.00 GEMSx003.01 or equivalent
     
 5. Clone repository for this classes  
     ```shell
-    git clone https://github.com/y-chai/GEMS-Learning-R-Spatial-Regression.git
+    git clone https://github.com/y-chai/GEMS-X003-Spatial-Regression-R.git
     ```
 
 ## Class and Exercises
-In your JupyterLab environment, open the newly cloned directory `GEMS-Learning-R-Spatial-Regression` and then follow along for in-class exercises 
+In your JupyterLab environment, open the newly cloned directory `GEMS-X003-Spatial-Regression-R` and then follow along for in-class exercises 
