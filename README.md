@@ -15,27 +15,19 @@ Prerequisites: GEMSx003.00 GEMSx003.01 or equivalent
 1. Login to GEMS Platform at https://gems.agroinformatics.org/
     - GEMS Platform uses Globus to authenticate your account, so if your institution is already linked to Globus (for example, University of Minnesota and many other universities), you can search and select your institution from the list and use your institutional account to log into GEMS Platform. Alternatively, you can log in using Google or ORCID iD, or create  your own Globus account to log in.   
 
-2. Once logged in, click `Analyze > JupyterLab` from the homepage
+2. Once logged in, click `Analyze > RStudio` from the homepage
 
-3. Open a bash terminal by clicking 'Terminal' icon in the Launcher **OR** by clicking `File > New > Terminal`
+3. Open a bash terminal by clicking 'Terminal' tab within the RStudio console section
 
-4. If the directories `classes\GEMSX003` were not created before, create directories for this class in the bash terminal using the following four commands  
+4. If the directories `classes/GEMSX003` were not created before, create directories for this class in the bash terminal using the following four commands  
     ```shell
-    mkdir classes  
-    cd classes  
-    mkdir GEMSX003  
-    cd GEMSX003
-    ```  
-    If these directories already exist, use the following commands to change to this directory
+    cd; mkdir -p classes/GEMSX003
+    ``` 
+5. Change working directory and clone repository for this classes  
     ```shell
-    cd classes
-    cd GEMSX003
-    ```
-    
-5. Clone repository for this classes  
-    ```shell
+    cd; cd classes/GEMSX003
     git clone https://github.com/y-chai/GEMS-X003-Spatial-Regression-R.git
     ```
 
 ## Class and Exercises
-In your JupyterLab environment, open the newly cloned directory `GEMS-X003-Spatial-Regression-R` and then follow along for in-class exercises 
+In your RStudio environment, open the newly cloned directory `GEMS-X003-Spatial-Regression-R` and then follow along for in-class exercises 

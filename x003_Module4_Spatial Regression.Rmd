@@ -222,7 +222,7 @@ mnp_nbd
 options(repr.plot.width = 8, repr.plot.height = 8)
 
 par(mfrow = c(2, 2))
-par(mai=c(0,0,2,0))
+par(mai=c(0,0,0.2,0))
 
 plt_coord <- st_coordinates(st_centroid(st_geometry(mnp)))
 
@@ -624,17 +624,11 @@ A full generalized spatial regression model with all types of spatial
 lag effects takes the form:
 
 $$
-\begin{equation*}
 y = \rho W_1y + X\beta + W_2X\gamma + u  \qquad |\rho| < 1
-\label{eq:y} \tag{1}
-\end{equation*}
 $$
 
 $$
-\begin{equation*}
 u = \lambda W_3u + \varepsilon \qquad |\lambda| < 1
-\label{eq:u} \tag{2}
-\end{equation*}
 $$ with $X$ a matrix of non-stochastic regressors, $W_i$ a weight matrix
 exogenously given, $\beta$ and $\gamma$ are vectors of regression
 parameters, $\varepsilon \sim N(0,\sigma_\varepsilon ^2I_n)$.
