@@ -45,7 +45,7 @@ Ali Joglekar ([joglekar\@umn.edu](mailto:joglekar@umn.edu){.email})
 ```{r}
 # Install and load packages needed for this workshop
 
-packages_to_load <- c("terra", "sf", "spdep", "spatialreg", "tmap")
+packages_to_load <- c("sf", "spdep", "spatialreg", "tmap")
 
 for ( package in packages_to_load ) {
     # Check if package is already installed, if not, install and load the package
