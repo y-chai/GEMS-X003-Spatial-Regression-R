@@ -175,8 +175,7 @@ str(mnp)
 ```
 
 ```{r}
-# plot the PEST variable 
-options(repr.plot.width = 8, repr.plot.height = 8)
+# plot the PEST variable
 
 tm_shape(mnp) +
 tm_polygons(col="PEST", border.col="grey50", lwd=.4)
@@ -219,8 +218,6 @@ mnp_nbd
 
 ```{r}
 # Plot
-options(repr.plot.width = 8, repr.plot.height = 8)
-
 par(mfrow = c(2, 2))
 par(mai=c(0,0,0.2,0))
 
@@ -318,16 +315,16 @@ differences do you see?
     mwi_coord <- st_coordinates(st_centroid(st_geometry(mwi_sf)))
 
     plot(mwi_sf$geometry, border = "grey60", main = "Queen's Case Contiguity")
-    plot(mwi_nbq, mwi_coord, pch = 19, cex = 0.6, add = TRUE)
+    plot(mwi_nbq, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
 
     plot(mwi_sf$geometry, border = "grey60", main = "Rook's Contiguity")
-    plot(mwi_nbr, mwi_coord, pch = 19, cex = 0.6, add = TRUE)
+    plot(mwi_nbr, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
 
     plot(mwi_sf$geometry, border = "grey60", main = "K-nearest Neighbors")
-    plot(mwi_nbk, mwi_coord, pch = 19, cex = 0.6, add = TRUE)
+    plot(mwi_nbk, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
 
     plot(mwi_sf$geometry, border = "grey60", main = "Distance")
-    plot(mwi_nbd, mwi_coord, pch = 19, cex = 0.6, add = TRUE)
+    plot(mwi_nbd, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
 
 ## **Spatial Weight Objects** {#SpWt}
 
@@ -628,7 +625,7 @@ y = \rho W_1y + X\beta + W_2X\gamma + u  \qquad |\rho| < 1
 $$
 
 $$
-u = \lambda W_3u + \varepsilon \qquad |\lambda| < 1
+u = \lambda W_3u + \varepsilon \qquad |\lambda| < 1  
 $$ with $X$ a matrix of non-stochastic regressors, $W_i$ a weight matrix
 exogenously given, $\beta$ and $\gamma$ are vectors of regression
 parameters, $\varepsilon \sim N(0,\sigma_\varepsilon ^2I_n)$.
