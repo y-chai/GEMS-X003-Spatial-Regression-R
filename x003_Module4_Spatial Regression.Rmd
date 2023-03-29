@@ -883,7 +883,7 @@ household (`tobccHH`).
 ------------------------------------------------------------------------
 
 **Step 2:** Run the LM lag model tests -- which model do these tests
-indicate you should you use?
+indicate you should use?
 
 ```{r}
 # Your answer
