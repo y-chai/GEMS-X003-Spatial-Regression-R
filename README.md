@@ -1,33 +1,22 @@
-<img src="images/GEMS Informatics Learning.png" width=600 alt="GEMS Learning Logo" title="GEMS Learning" />
+<img src="images/GEMS Informatics Learning.png" title="GEMS Learning" alt="GEMS Learning Logo" width="600"/>
 
 # Spatial Regression in R
 
-Welcome to **GEMS X003.4 Explicitly Accounting for Location in Agriculture: Spatial Regression in R**.  
+Welcome to **GEMS X003.4 Explicitly Accounting for Location in Agriculture: Spatial Regression in R**.
 
-This course is designed for those who want to learn spatial regression techniques and model spatial dependency explicitly. Through this course, you will learn about  spatial dependency and spatial autocorrelation, the construction of spatial weight matrices, testing for spatial association and correlation and building generalized spatial regression models. You will have the opportunity to immediately practice your new skills via hands-on exercises focused on agri-food applications throughout the 2.5-hour workshop.
+This course is designed for those who want to learn spatial regression techniques and model spatial dependency explicitly. Through this course, you will learn about spatial dependency and spatial autocorrelation, the construction of spatial weight matrices, testing for spatial association and correlation and building generalized spatial regression models. You will have the opportunity to immediately practice your new skills via hands-on exercises focused on agri-food applications throughout the 2.5-hour workshop.
 
-This workshop is part of a series on working with and analyzing spatial agricultural data in R. 
+This workshop is part of a series on working with and analyzing spatial agricultural data in R.
 
 Prerequisites: GEMSx003.00 GEMSx003.01 or equivalent
 
-
 ## Initial Setup
-1. Login to GEMS Platform at https://gems.agroinformatics.org/
-    - GEMS Platform uses Globus to authenticate your account, so if your institution is already linked to Globus (for example, University of Minnesota and many other universities), you can search and select your institution from the list and use your institutional account to log into GEMS Platform. Alternatively, you can log in using Google or ORCID iD, or create  your own Globus account to log in.   
 
-2. Once logged in, click `Analyze > RStudio` from the homepage
+1.  Download course materials from [`https://github.com/y-chai/GEMS-X003-Spatial-Regression-R.git`](https://github.com/y-chai/GEMS-X003-Spatial-Regression-R.git)
 
-3. Open a bash terminal by clicking 'Terminal' tab within the RStudio console section
+2.  Unzip the course folder
 
-4. If the directories `classes/GEMSX003` were not created before, create directories for this class in the bash terminal using the following four commands  
-    ```shell
-    cd; mkdir -p classes/GEMSX003
-    ``` 
-5. Change working directory and clone repository for this classes  
-    ```shell
-    cd; cd classes/GEMSX003
-    git clone https://github.com/y-chai/GEMS-X003-Spatial-Regression-R.git
-    ```
+## Lecture material
 
-## Class and Exercises
-In your RStudio environment, open the newly cloned directory `GEMS-X003-Spatial-Regression-R` and then follow along for in-class exercises 
+1.  Navigate to your `GEMS-X003-Spatial-Regression-R` directory
+2.  Open the `x003_Module4_Spatial Regression.Rmd` notebook to follow along throughout the class

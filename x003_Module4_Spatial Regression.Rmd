@@ -19,8 +19,8 @@ Ali Joglekar ([joglekar\@umn.edu](mailto:joglekar@umn.edu){.email})
 ## Method of Delivery
 
 -   Workshop text, images and R code are all contained within a R
-    Markdown file hosted on the GEMS Informatics Platform. You do not
-    need to have R or RStudio installed on your machine to participate
+    Markdown file in the github repository. You need to have R and
+    RStudio installed on your machine to participate
 -   A recording of the workshop will be posted on Canvas
 -   Please download any desired materials, as we cannot guarantee access
     to the Canvas course beyond 3 months.
@@ -60,16 +60,18 @@ for ( package in packages_to_load ) {
 [Note: For your own work, once packages are installed, it is recommended
 to just use library() to load your packages]{style="color:Green"}
 
-    # Spatial data libraries
-    library(terra)
-    library(sf)
-    library(spdep)
+```         
+# Spatial data libraries
+library(terra)
+library(sf)
+library(spdep)
 
-    # Spatial regression libraries
-    library(spatialreg)
+# Spatial regression libraries
+library(spatialreg)
 
-    # Plotting libraries
-    library(tmap)
+# Plotting libraries
+library(tmap)
+```
 
 ------------------------------------------------------------------------
 
@@ -284,47 +286,49 @@ differences do you see?
 
 ------------------------------------------------------------------------
 
-    # Possible answer:
+```         
+# Possible answer:
 
-    # Step 1: 
-    # Read MWI shape file
-    mwi_sf <- st_read("./data/shp/MWI") #shapefiles called only using data source name (dsn)
-    mwi_sf
-
-
-    # Step 2: 
-    #neighbor objects
-    #-------------
-    mwi_nbq <- poly2nb(mwi_sf) #queen's case by default
-    mwi_nbr <- poly2nb(mwi_sf, queen = FALSE) #rook's case
-    mwi_nbk <- knn2nb(knearneigh(st_centroid(st_geometry(mwi_sf)), k = 3)) #3 nearest neighbors
-    mwi_nbd <- dnearneigh(st_centroid(st_geometry(mwi_sf)), d1 = 0, d2 = 1, longlat = TRUE) #neighbors within 1 degree
-
-    # Step 3: 
-    summary(mwi_nbq)
-    summary(mwi_nbr)
-    summary(mwi_nbk)
-    summary(mwi_nbd)
+# Step 1: 
+# Read MWI shape file
+mwi_sf <- st_read("./data/shp/MWI") #shapefiles called only using data source name (dsn)
+mwi_sf
 
 
+# Step 2: 
+#neighbor objects
+#-------------
+mwi_nbq <- poly2nb(mwi_sf) #queen's case by default
+mwi_nbr <- poly2nb(mwi_sf, queen = FALSE) #rook's case
+mwi_nbk <- knn2nb(knearneigh(st_centroid(st_geometry(mwi_sf)), k = 3)) #3 nearest neighbors
+mwi_nbd <- dnearneigh(st_centroid(st_geometry(mwi_sf)), d1 = 0, d2 = 1, longlat = TRUE) #neighbors within 1 degree
 
-    # Step 4:
-    par(mfrow = c(1, 4))
-    par(mar=c(0,0,2,0))
+# Step 3: 
+summary(mwi_nbq)
+summary(mwi_nbr)
+summary(mwi_nbk)
+summary(mwi_nbd)
 
-    mwi_coord <- st_coordinates(st_centroid(st_geometry(mwi_sf)))
 
-    plot(mwi_sf$geometry, border = "grey60", main = "Queen's Case Contiguity")
-    plot(mwi_nbq, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
 
-    plot(mwi_sf$geometry, border = "grey60", main = "Rook's Contiguity")
-    plot(mwi_nbr, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
+# Step 4:
+par(mfrow = c(1, 4))
+par(mar=c(0,0,2,0))
 
-    plot(mwi_sf$geometry, border = "grey60", main = "K-nearest Neighbors")
-    plot(mwi_nbk, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
+mwi_coord <- st_coordinates(st_centroid(st_geometry(mwi_sf)))
 
-    plot(mwi_sf$geometry, border = "grey60", main = "Distance")
-    plot(mwi_nbd, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
+plot(mwi_sf$geometry, border = "grey60", main = "Queen's Case Contiguity")
+plot(mwi_nbq, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
+
+plot(mwi_sf$geometry, border = "grey60", main = "Rook's Contiguity")
+plot(mwi_nbr, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
+
+plot(mwi_sf$geometry, border = "grey60", main = "K-nearest Neighbors")
+plot(mwi_nbk, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
+
+plot(mwi_sf$geometry, border = "grey60", main = "Distance")
+plot(mwi_nbd, mwi_coord, pch = 19, cex = 0.6, col="red", add = TRUE)
+```
 
 ## **Spatial Weight Objects** {#SpWt}
 
@@ -406,7 +410,7 @@ sapply(mnp_lw_b$weights, sum)
 ```
 
 ```{r}
-# Matrix view of the weights
+# Matrix view of the weights (only showing first 10 rows x 10cols)
 listw2mat(mnp_lw_b)
 ```
 
@@ -445,20 +449,22 @@ and **binary** type
 
 ------------------------------------------------------------------------
 
-    # Possible answer:
+```         
+# Possible answer:
 
-    # Step 1:
-    mwi_lw_w <- nb2listw(mwi_nbq)
-    summary(mwi_lw_w)
+# Step 1:
+mwi_lw_w <- nb2listw(mwi_nbq)
+summary(mwi_lw_w)
 
-    # Step 2:
-    mwi_lw_b <- nb2listw(mwi_nbq, style="B")
-    summary(mwi_lw_b)
+# Step 2:
+mwi_lw_b <- nb2listw(mwi_nbq, style="B")
+summary(mwi_lw_b)
 
-    # Step 3: 
-    # Matrix view of the weights
-    listw2mat(mwi_lw_w)
-    listw2mat(mwi_lw_b)
+# Step 3: 
+# Matrix view of the weights
+listw2mat(mwi_lw_w)
+listw2mat(mwi_lw_b)
+```
 
 ------------------------------------------------------------------------
 
@@ -570,22 +576,24 @@ Moran's I plot for other variables in the Malawi LSMS data (e.g.,
 
 ------------------------------------------------------------------------
 
-    ## Possible answer:
+```         
+## Possible answer:
 
-    #Step 1:
-    moran.test(mwi_sf$poverty, listw=mwi_lw_w)
+#Step 1:
+moran.test(mwi_sf$poverty, listw=mwi_lw_w)
 
-    #Step 2:
-    moran.plot(mwi_sf$poverty, listw=mwi_lw_w)
+#Step 2:
+moran.plot(mwi_sf$poverty, listw=mwi_lw_w)
 
-    # Step 3:
-    # croplnd
-    moran.test(mwi_sf$croplnd, listw=mwi_lw_w)
-    moran.plot(mwi_sf$croplnd, listw=mwi_lw_w)
+# Step 3:
+# croplnd
+moran.test(mwi_sf$croplnd, listw=mwi_lw_w)
+moran.plot(mwi_sf$croplnd, listw=mwi_lw_w)
 
-    # tobccHH
-    moran.test(mwi_sf$tobccHH, listw=mwi_lw_w)
-    moran.plot(mwi_sf$tobccHH, listw=mwi_lw_w)
+# tobccHH
+moran.test(mwi_sf$tobccHH, listw=mwi_lw_w)
+moran.plot(mwi_sf$tobccHH, listw=mwi_lw_w)
+```
 
 ------------------------------------------------------------------------
 
@@ -706,7 +714,7 @@ summary(mnp_slm)
 ```
 
 ```{r}
-# SLX
+# Spatial Lag of X Model (SLX)
 mnp_slx <- lmSLX(PEST ~ HOST, data=mnp, listw =mnp_lw_w)
 summary(mnp_slx)
 ```
@@ -837,9 +845,9 @@ summary(lm.LMtests(mnp_ols, mnp_lw_w, test=c("all")))
 ```
 
 ```{r}
-# General Nesting Spatial Model (GNS)
-mnp_gns <- sacsarlm(PEST ~ HOST, data=mnp, listw =mnp_lw_w, type="sacmixed")
-summary(mnp_gns)
+# Spatial Lag Model (SLM)
+mnp_slm <- lagsarlm(PEST ~ HOST, data=mnp, listw =mnp_lw_w)
+summary(mnp_slm)
 ```
 
 ### **Impacts Interpretation**
@@ -873,7 +881,9 @@ as a function of cropland cultivated (`cropland`), livestock owned
 (`edu`), female head of household (`female`) and tobacco growing
 household (`tobccHH`).
 
-    > poverty ~ croplnd + livstck + income + edu + female + tobccHH
+```         
+> poverty ~ croplnd + livstck + income + edu + female + tobccHH
+```
 
 ```{r}
 # Your answer
@@ -910,22 +920,24 @@ indicate you should use?
 
 ------------------------------------------------------------------------
 
-    # Possible answer:
+```         
+# Possible answer:
 
-    #Step 1:
-    mwi_ols <- lm(poverty ~ croplnd + livstck + income + edu + female + tobccHH, data = mwi_sf)
-    summary(mwi_ols)  
+#Step 1:
+mwi_ols <- lm(poverty ~ croplnd + livstck + income + edu + female + tobccHH, data = mwi_sf)
+summary(mwi_ols)  
 
-    # Step 2:
-    summary(lm.LMtests(mwi_ols, mwi_lw_w, test = c("all")))
-    # Look at the p.value to decide which model(s) to run
+# Step 2:
+summary(lm.LMtests(mwi_ols, mwi_lw_w, test = c("all")))
+# Look at the p.value to decide which model(s) to run
 
-    #Step 3:
-    mwi_slm <- lagsarlm(poverty ~ croplnd + livstck + income + edu + female + tobccHH, 
-                    data = mwi_sf, listw = mwi_lw_w)
-    summary(mwi_slm)
+#Step 3:
+mwi_slm <- lagsarlm(poverty ~ croplnd + livstck + income + edu + female + tobccHH, 
+                data = mwi_sf, listw = mwi_lw_w)
+summary(mwi_slm)
 
-    #Step 4:
-    impacts(mwi_slm, listw = mwi_lw_w)
+#Step 4:
+impacts(mwi_slm, listw = mwi_lw_w)
+```
 
 ------------------------------------------------------------------------
